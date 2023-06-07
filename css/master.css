@@ -2,14 +2,21 @@
 
 /* root */
 :root {
-  --primary: #004bad;
+  /* --primary: #004bad;
   --info: #17a2b8;
   --success: #28a745;
   --warning: #ffc107;
   --danger: #dc3545;
   --dark: #343a40;
   --secoundry: #6c757d;
-  --light: #f8f9fa;
+  --light: #f8f9fa; */
+
+  --bg: #010007;
+  --primary: #000b81;
+  --sec: #1c529f;
+  --third: #006fa5;
+  --fourth: #668fbd;
+  --color: #fff;
 }
 
 * {
@@ -25,6 +32,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
+  color: var(--color);
 }
 
 /* header */
@@ -38,11 +46,28 @@ header .content {
   justify-content: space-between;
   align-items: center;
   font-size: 3rem;
-  background: var(--light);
+  background: var(--bg);
 }
 
 header .content .left {
   padding: 30px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+header .content video {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 header .content .caption {
@@ -52,7 +77,7 @@ header .content .caption {
 
 header .content .caption span {
   font-weight: bold;
-  background: linear-gradient(to right, var(--primary), var(--danger));
+  background: linear-gradient(to right, #ff0010, #ff0043, #fa05b2, #008fff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -70,11 +95,12 @@ header nav {
   align-items: center;
   width: 100%;
   text-transform: uppercase;
+  z-index: 3;
 }
 
 header nav a {
   text-decoration: none;
-  color: #343a40;
+  color: var(--color);
   padding: 30px 15px;
 }
 
@@ -87,7 +113,8 @@ header img {
   height: 100%;
   width: 25vw;
   position: relative;
-  animation: slider 1s ease-in-out;
+  animation: slider 0.5s ease-in-out;
+  z-index: 1;
 }
 
 @keyframes slider {
@@ -101,7 +128,7 @@ header img {
 
 .right .photo {
   padding: 20px;
-  background: var(--light);
+  background: var(--bg);
   width: fit-content;
   position: absolute;
   top: 50%;
@@ -113,7 +140,7 @@ header img {
 .btn {
   padding: 10px 15px;
   font-size: 1.5rem;
-  background: var(--primary);
+  background: var(--sec);
   width: fit-content;
   color: var(--light);
   border-radius: 10px;
@@ -123,7 +150,8 @@ header img {
 }
 
 .btn:hover {
-  background: #005bd2;
+  /* background: #005bd2; */
+  background: var(--third);
   border-radius: 5px;
 }
 
@@ -142,7 +170,7 @@ section::after {
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
-  width: 80%;
+  width: 90%;
   height: 3px;
   background: linear-gradient(
     90deg,
@@ -200,4 +228,11 @@ section .header:hover > .title {
 footer {
   padding: 20px;
   text-align: center;
+  background: var(--bg);
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--sec);
+  font-weight: bold;
 }
