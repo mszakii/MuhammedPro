@@ -1,4 +1,4 @@
-fetch("js/main.json")
+fetch("https://muhammed-abdelaleam.github.io/me/js/main.json")
   .then((data) => data.json())
   .then((data) => {
     for (const key in data) {
