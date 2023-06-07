@@ -155,10 +155,19 @@ header img {
   border-radius: 5px;
 }
 
+@media (max-width: 900px) {
+  html {
+    font-size: 10px;
+  }
+  .right {
+    display: none;
+  }
+}
+
 /* sections */
 /* sections */
 section {
-  height: 100vh;
+  min-height: 100vh;
   background: var(--bg);
   /* border-bottom: 10px solid var(--primary); */
   position: relative;
@@ -222,6 +231,47 @@ section .header .title::after {
 section .header:hover > .title {
   color: white;
   z-index: 1;
+}
+
+/* work section */
+.work .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 20px 50px 20px;
+  width: 80%;
+  margin: auto;
+}
+
+.work .content .card {
+  background: #111;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.work .content .card:hover {
+  transform: scale(1.05);
+}
+
+.work .content .card .title {
+  font-size: 1.75rem;
+  padding: 10px 0;
+}
+
+.work .content .btn {
+  font-size: 1rem;
+}
+
+.work .content .card .caption {
+  padding: 20px;
+}
+
+.work .content .photo img {
+  width: 100%;
 }
 
 /* footer */
